@@ -7,9 +7,10 @@ import { BrowserRouter } from "react-router-dom";
 import { goerli } from "wagmi/chains";
 import { infuraProvider } from "@wagmi/core/providers/infura";
 
+const INFURA_API = process.env.INFURA_API;
 const { publicClient, webSocketPublicClient } = configureChains(
   [goerli],
-  [infuraProvider({ apiKey: "09c7aa1765c24b6eba2ca8c47a35b400" })]
+  [infuraProvider({ apiKey: INFURA_API })]
 );
 
 const config = createConfig({
