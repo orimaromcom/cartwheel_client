@@ -73,7 +73,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  CartWheel Club
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -87,10 +87,10 @@ const Sidebar = () => {
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
-                  width="100px"
+                  width="150px"
                   height="100px"
-                  src={`../../assets/user.png`}
-                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                  src={`../../assets/lo frayer logo.png`}
+                  style={{ cursor: "pointer" }}
                 />
               </Box>
               <Box textAlign="center">
@@ -100,7 +100,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  John Doe
+                  Adi 
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   Club Admin
