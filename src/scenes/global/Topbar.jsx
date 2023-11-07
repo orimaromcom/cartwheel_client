@@ -7,6 +7,7 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import Profile from "../../components/Profile";
 
 const Topbar = () => {
   const theme = useTheme();
@@ -38,7 +39,9 @@ const Topbar = () => {
         <IconButton>
           <PersonOutlinedIcon />
         </IconButton>
-        <IconButton>Connect Wallet</IconButton>
+        <IconButton>
+          <Profile />
+        </IconButton>
       </Box>
     </Box>
   );
