@@ -18,10 +18,7 @@ const WalletData = () => {
     },
   });
 
-  const handleNFTData = () => {
-    console.log("this is the tokenIdData: ", getTokenIdByAddress.data.toString());
-  };
-  return <div onClick={handleNFTData}>ClickMe</div>;
+  return;
 };
 
 export default WalletData;

@@ -7,7 +7,7 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import Profile from "../../components/Profile";
+import WalletConnect from "../../components/WalletConnect";
 import WalletData from "../../components/WalletData";
 
 const Topbar = () => {
@@ -40,12 +40,8 @@ const Topbar = () => {
         <IconButton>
           <PersonOutlinedIcon />
         </IconButton>
-        <IconButton>
-          <Profile />
-        </IconButton>
-        <IconButton>
-          <WalletData />
-        </IconButton>
+        <WalletConnect />
+        <WalletData />
       </Box>
     </Box>
   );
