@@ -8,6 +8,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import Profile from "../../components/Profile";
+import WalletData from "../../components/WalletData";
 
 const Topbar = () => {
   const theme = useTheme();
@@ -41,6 +42,9 @@ const Topbar = () => {
         </IconButton>
         <IconButton>
           <Profile />
+        </IconButton>
+        <IconButton>
+          <WalletData />
         </IconButton>
       </Box>
     </Box>

@@ -7,10 +7,11 @@ import { WagmiConfig, createConfig, configureChains } from "wagmi";
 import { goerli } from "wagmi/chains";
 import { infuraProvider } from "@wagmi/core/providers/infura";
 
-const INFURA_API = process.env.INFURA_API;
+const REACT_APP_INFURA_API = process.env.REACT_APP_INFURA_API;
+
 const { publicClient, webSocketPublicClient } = configureChains(
   [goerli],
-  [infuraProvider({ apiKey: INFURA_API })]
+  [infuraProvider({ apiKey: REACT_APP_INFURA_API })]
 );
 
 const config = createConfig({
