@@ -20,7 +20,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar walletData={walletData} />
+          <Sidebar walletData={walletData} walletIsConnected={walletIsConnected} />
           <main className="content">
             <Topbar
               walletIsConnected={walletIsConnected}
