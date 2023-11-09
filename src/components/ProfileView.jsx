@@ -27,10 +27,10 @@ const ProfileView = ({ walletData }) => {
           sx={{ m: "10px 0 0 0" }}
         >
           {walletData === "0"
-            ? `Guest tokenId : ${walletData}`
+            ? `Some Name : ${walletData}`
             : walletData === "1"
             ? `Adi`
-            : `some user`}
+            : `Some User`}
         </Typography>
         <Typography variant="h5" color={colors.greenAccent[500]}>
           {walletData === "0"
