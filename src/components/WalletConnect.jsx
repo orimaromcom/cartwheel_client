@@ -1,11 +1,38 @@
-import { useConnect, useDisconnect } from "wagmi";
+import { useConnect, useDisconnect, useAccount, useContractRead } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import WalletIcon from "@mui/icons-material/Wallet";
 import { IconButton } from "@mui/material";
+import NFTContractABI from "../contracts/NFTContract.json"; // Import your contract ABI
 
-const WalletConnect = ({ walletIsConnected, setWalletIsConnected }) => {
+const WalletConnect = ({
+  walletIsConnected,
+  setWalletIsConnected,
+  walletAddress,
+  setWalletAddress,
+  setWalletData,
+}) => {
   const { connect } = useConnect({
     connector: new InjectedConnector(),
+  });
+
+  const { address, isConnected } = useAccount();
+  const REACT_APP_CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
+
+  const getTokenIdByAddress = useContractRead({
+    abi: NFTContractABI,
+    address: REACT_APP_CONTRACT_ADDRESS,
+    functionName: "getTokenIdByAddress",
+    args: [address],
+    enabled: isConnected,
+
+    onSuccess() {
+      console.log("token ID in wallet address:", getTokenIdByAddress.data?.toString());
+      setWalletAddress(address);
+      setWalletData(getTokenIdByAddress.data?.toString());
+    },
+    onError(error) {
+      console.log("get token ID Error", error);
+    },
   });
   const { disconnect } = useDisconnect();
 
@@ -16,7 +43,7 @@ const WalletConnect = ({ walletIsConnected, setWalletIsConnected }) => {
         onClick={() => {
           disconnect();
           setWalletIsConnected(false);
-          console.log("disconnecting wallet");
+          console.log("disconnecting wallet address: ", walletAddress);
         }}
       >
         <IconButton
