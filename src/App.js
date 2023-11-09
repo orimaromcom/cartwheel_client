@@ -11,20 +11,23 @@ import { ColorModeContext, useMode } from "./theme";
 
 function App() {
   const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
   const [walletIsConnected, setWalletIsConnected] = useState(false);
+  const [walletAddress, setWalletAddress] = useState("");
+  const [walletData, setWalletData] = useState("0");
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar isSidebar={isSidebar} />
+          <Sidebar walletData={walletData} />
           <main className="content">
             <Topbar
-              setIsSidebar={setIsSidebar}
               walletIsConnected={walletIsConnected}
               setWalletIsConnected={setWalletIsConnected}
+              setWalletData={setWalletData}
+              walletAddress={walletAddress}
+              setWalletAddress={setWalletAddress}
             />
             <Routes>
               <Route path="/" element={<Dashboard />} />

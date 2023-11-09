@@ -8,9 +8,15 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import WalletConnect from "../../components/WalletConnect";
-import WalletTokenData from "../../components/WalletData";
 
-const Topbar = ({ walletIsConnected, setWalletIsConnected }) => {
+const Topbar = ({
+  walletIsConnected,
+  setWalletIsConnected,
+  walletData,
+  setWalletData,
+  walletAddress,
+  setWalletAddress,
+}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
@@ -43,8 +49,10 @@ const Topbar = ({ walletIsConnected, setWalletIsConnected }) => {
         <WalletConnect
           walletIsConnected={walletIsConnected}
           setWalletIsConnected={setWalletIsConnected}
+          walletAddress={walletAddress}
+          setWalletAddress={setWalletAddress}
+          setWalletData={setWalletData}
         />
-        <WalletTokenData />
       </Box>
     </Box>
   );

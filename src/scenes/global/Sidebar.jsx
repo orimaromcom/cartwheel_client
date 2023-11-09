@@ -30,7 +30,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
-const Sidebar = () => {
+const Sidebar = ({ walletData }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -84,18 +84,19 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
-          {!isCollapsed && (
-            <Box mb="25px">
-              <Box display="flex" justifyContent="center" alignItems="center">
-                <img
-                  alt="profile-user"
-                  width="150px"
-                  height="100px"
-                  src={`../../assets/lo frayer logo.png`}
-                  style={{ cursor: "pointer" }}
-                />
-              </Box>
-              {
+          {!isCollapsed &&
+            (walletData !== "0" ? (
+              <Box mb="25px">
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <img
+                    alt="profile-user"
+                    width="150px"
+                    height="100px"
+                    src={`../../assets/lo frayer logo.png`}
+                    style={{ cursor: "pointer" }}
+                  />
+                </Box>
+
                 <Box textAlign="center">
                   <Typography
                     variant="h2"
@@ -109,9 +110,8 @@ const Sidebar = () => {
                     Club Admin
                   </Typography>
                 </Box>
-              }
-            </Box>
-          )}
+              </Box>
+            ) : null)}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Typography
