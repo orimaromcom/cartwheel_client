@@ -4,7 +4,6 @@ const REACT_APP_CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 const WalletData = () => {
   const { address } = useAccount();
-
   const getTokenIdByAddress = useContractRead({
     address: REACT_APP_CONTRACT_ADDRESS,
     functionName: "getTokenIdByAddress",
@@ -18,7 +17,7 @@ const WalletData = () => {
     },
   });
 
-  return;
+  return getTokenIdByAddress.data?.toString();
 };
 
 export default WalletData;
