@@ -14,6 +14,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   return (
     <MenuItem
       active={selected === title}
@@ -94,19 +95,21 @@ const Sidebar = () => {
                   style={{ cursor: "pointer" }}
                 />
               </Box>
-              <Box textAlign="center">
-                <Typography
-                  variant="h2"
-                  color={colors.grey[100]}
-                  fontWeight="bold"
-                  sx={{ m: "10px 0 0 0" }}
-                >
-                  Adi
-                </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
-                  Club Admin
-                </Typography>
-              </Box>
+              {
+                <Box textAlign="center">
+                  <Typography
+                    variant="h2"
+                    color={colors.grey[100]}
+                    fontWeight="bold"
+                    sx={{ m: "10px 0 0 0" }}
+                  >
+                    Adi
+                  </Typography>
+                  <Typography variant="h5" color={colors.greenAccent[500]}>
+                    Club Admin
+                  </Typography>
+                </Box>
+              }
             </Box>
           )}
 
