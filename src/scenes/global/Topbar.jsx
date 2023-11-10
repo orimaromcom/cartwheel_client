@@ -52,6 +52,7 @@ const Topbar = ({
           walletAddress={walletAddress}
           setWalletAddress={setWalletAddress}
           setWalletData={setWalletData}
+          walletData={walletData}
         />
       </Box>
     </Box>

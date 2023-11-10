@@ -32,10 +32,11 @@ const WalletConnect = ({
     },
     onError(error) {
       console.log("get token ID Error", error);
+      setWalletData("0");
     },
   });
-  const { disconnect } = useDisconnect();
 
+  const { disconnect } = useDisconnect();
   if (walletIsConnected) {
     return (
       <div

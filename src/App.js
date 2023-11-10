@@ -13,7 +13,7 @@ function App() {
   const [theme, colorMode] = useMode();
   const [walletIsConnected, setWalletIsConnected] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
-  const [walletData, setWalletData] = useState("0");
+  const [walletData, setWalletData] = useState(undefined);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -26,11 +26,20 @@ function App() {
               walletIsConnected={walletIsConnected}
               setWalletIsConnected={setWalletIsConnected}
               setWalletData={setWalletData}
-              walletAddress={walletAddress}
+              walletData={walletData}
               setWalletAddress={setWalletAddress}
             />
             <Routes>
-              <Route path="/" element={<Dashboard />} />
+              <Route
+                path="/"
+                element={
+                  <Dashboard
+                    walletData={walletData}
+                    walletIsConnected={walletIsConnected}
+                    walletAddress={walletAddress}
+                  />
+                }
+              />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
