@@ -43,7 +43,7 @@ function App() {
                   />
                 }
               />
-              <Route path="/benefits" element={<Benefits />} />
+              <Route path="/benefits" element={<Benefits walletData={walletData} />} />
               <Route path="/members" element={<Members />} />
               <Route path="/transactions" element={<Transactions />} />
             </Routes>

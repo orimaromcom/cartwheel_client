@@ -6,9 +6,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import Header from "../../components/Header";
 
-const Benefits = () => {
+const Benefits = ({ walletData }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   const columns = [
     { field: "id", headerName: "ID" },
     {
@@ -64,13 +65,16 @@ const Benefits = () => {
   return (
     <Box m="20px">
       <Header title="Benefits" subtitle="Managing Club Benefits" />
-      <div className="space-x-3 flex ">
-        <input placeholder="Business" />
-        <input placeholder="Benefit" />
-        <div className="cursor-pointer bg-red-400">
-          <AddIcon />
+
+      {walletData === "1" ? (
+        <div className="space-x-3 flex ">
+          <input placeholder="Business" />
+          <input placeholder="Benefit" />
+          <div className="cursor-pointer bg-red-400">
+            <AddIcon />
+          </div>
         </div>
-      </div>
+      ) : null}
       <Box
         m="40px 0 0 0"
         height="75vh"
