@@ -89,7 +89,7 @@ const Sidebar = ({ walletData, walletIsConnected }) => {
             <ProfileView walletData={walletData} />
           ) : null}
 
-          {walletIsConnected ? (
+          {walletIsConnected && walletData !== "0" ? (
             <Box paddingLeft={isCollapsed ? undefined : "10%"}>
               <Item
                 title="Dashboard"
@@ -99,19 +99,21 @@ const Sidebar = ({ walletData, walletIsConnected }) => {
                 setSelected={setSelected}
               />
               <Item
-                title="Manage Benefits"
+                title="Benefits"
                 to="/benefits"
                 icon={<PeopleOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
-              <Item
-                title="Club Members"
-                to="/members"
-                icon={<ContactsOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
+              {walletData === "1" ? (
+                <Item
+                  title="Club Members"
+                  to="/members"
+                  icon={<ContactsOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              ) : null}
               <Item
                 title="Transactions"
                 to="/transactions"
