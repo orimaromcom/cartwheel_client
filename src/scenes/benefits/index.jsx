@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataTeam } from "../../data/mockData";
 import DeleteIcon from "@mui/icons-material/Delete";
+import AddIcon from "@mui/icons-material/Add";
 import Header from "../../components/Header";
 
 const Benefits = () => {
@@ -63,7 +64,13 @@ const Benefits = () => {
   return (
     <Box m="20px">
       <Header title="Benefits" subtitle="Managing Club Benefits" />
-
+      <div className="space-x-3 flex ">
+        <input placeholder="Business" />
+        <input placeholder="Benefit" />
+        <div className="cursor-pointer bg-red-400">
+          <AddIcon />
+        </div>
+      </div>
       <Box
         m="40px 0 0 0"
         height="75vh"
