@@ -33,7 +33,7 @@ const WalletConnect = ({
     },
     onError(error) {
       console.log("get token ID Error", error);
-      setWalletData(undefined);
+      setWalletData("0");
     },
   });
 
