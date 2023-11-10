@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 
 import Header from "../../components/Header";
-
+import GetPartnerNft from "../../components/GetPartnerNft";
 const Dashboard = ({ walletData, walletIsConnected, walletAddress }) => {
   console.log(walletIsConnected);
   return (
@@ -11,7 +11,7 @@ const Dashboard = ({ walletData, walletIsConnected, walletAddress }) => {
       {walletIsConnected ? (
         <div>
           Hello , This is your wallet address: {walletAddress}
-          <div>{walletData === "0" ? `Become Partner` : null}</div>
+          <div>{walletData === "0" ? <GetPartnerNft /> : null}</div>
         </div>
       ) : null}
     </Box>
