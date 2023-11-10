@@ -4,7 +4,7 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Benefits from "./scenes/benefits";
 import Invoices from "./scenes/invoices";
-import Contacts from "./scenes/contacts";
+import Members from "./scenes/members";
 import Dashboard from "./scenes/dashboard";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -44,7 +44,7 @@ function App() {
                 }
               />
               <Route path="/benefits" element={<Benefits />} />
-              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/members" element={<Members />} />
               <Route path="/invoices" element={<Invoices />} />
             </Routes>
           </main>

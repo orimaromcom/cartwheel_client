@@ -91,13 +91,6 @@ const Sidebar = ({ walletData, walletIsConnected }) => {
 
           {walletIsConnected ? (
             <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-              <Typography
-                variant="h6"
-                color={colors.grey[300]}
-                sx={{ m: "15px 0 5px 20px" }}
-              >
-                Data
-              </Typography>
               <Item
                 title="Dashboard"
                 to="/"
@@ -106,7 +99,7 @@ const Sidebar = ({ walletData, walletIsConnected }) => {
                 setSelected={setSelected}
               />
               <Item
-                title="Manage Club"
+                title="Manage Benefits"
                 to="/benefits"
                 icon={<PeopleOutlinedIcon />}
                 selected={selected}
@@ -114,7 +107,7 @@ const Sidebar = ({ walletData, walletIsConnected }) => {
               />
               <Item
                 title="Club Members"
-                to="/contacts"
+                to="/members"
                 icon={<ContactsOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
