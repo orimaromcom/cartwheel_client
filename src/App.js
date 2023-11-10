@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Benefits from "./scenes/benefits";
-import Invoices from "./scenes/invoices";
+import Transactions from "./scenes/transactions";
 import Members from "./scenes/members";
 import Dashboard from "./scenes/dashboard";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -45,7 +45,7 @@ function App() {
               />
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/members" element={<Members />} />
-              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/transactions" element={<Transactions />} />
             </Routes>
           </main>
         </div>

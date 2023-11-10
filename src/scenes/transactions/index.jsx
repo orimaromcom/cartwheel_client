@@ -4,25 +4,25 @@ import { tokens } from "../../theme";
 import { mockDataInvoices } from "../../data/mockData";
 import Header from "../../components/Header";
 
-const Invoices = () => {
+const Transactions = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
     { field: "id", headerName: "ID" },
     {
-      field: "name",
-      headerName: "Name",
+      field: "tokenId",
+      headerName: "Token Id",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
-      field: "phone",
-      headerName: "Phone Number",
+      field: "walletAddress",
+      headerName: "Wallet Address",
       flex: 1,
     },
     {
-      field: "email",
-      headerName: "Email",
+      field: "business",
+      headerName: "Business",
       flex: 1,
     },
     {
@@ -30,21 +30,24 @@ const Invoices = () => {
       headerName: "Cost",
       flex: 1,
       renderCell: (params) => (
-        <Typography color={colors.greenAccent[500]}>
-          ${params.row.cost}
-        </Typography>
+        <Typography color={colors.greenAccent[500]}>${params.row.cost}</Typography>
       ),
     },
     {
-      field: "date",
-      headerName: "Date",
+      field: "businessBenefit",
+      headerName: "Business Benefit",
+      flex: 1,
+    },
+    {
+      field: "transactionTime",
+      headerName: "Transaction Time",
       flex: 1,
     },
   ];
 
   return (
     <Box m="20px">
-      <Header title="INVOICES" subtitle="List of Invoice Balances" />
+      <Header title="TRANSACTIONS" subtitle="List of Transactions" />
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -80,4 +83,4 @@ const Invoices = () => {
   );
 };
 
-export default Invoices;
+export default Transactions;
