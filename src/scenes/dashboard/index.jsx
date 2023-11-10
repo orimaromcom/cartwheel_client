@@ -11,7 +11,7 @@ const Dashboard = ({ walletData, walletIsConnected, walletAddress }) => {
       {walletIsConnected ? (
         <div>
           Hello , This is your wallet address: {walletAddress}
-          <div>{walletData === undefined ? `Become Partner` : null}</div>
+          <div>{walletData === "0" ? `Become Partner` : null}</div>
         </div>
       ) : null}
     </Box>
