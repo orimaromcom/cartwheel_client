@@ -67,7 +67,7 @@ const WalletConnect = ({
       }}
     >
       <IconButton>
-        <WalletIcon />
+        <button>Connect wallet</button>
       </IconButton>
     </div>
   );

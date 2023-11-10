@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
-import Team from "./scenes/team";
+import Benefits from "./scenes/benefits";
 import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
 import Dashboard from "./scenes/dashboard";
@@ -21,6 +21,7 @@ function App() {
         <CssBaseline />
         <div className="app">
           <Sidebar walletData={walletData} walletIsConnected={walletIsConnected} />
+
           <main className="content">
             <Topbar
               walletIsConnected={walletIsConnected}
@@ -34,13 +35,15 @@ function App() {
                 path="/"
                 element={
                   <Dashboard
-                    walletData={walletData}
                     walletIsConnected={walletIsConnected}
-                    walletAddress={walletAddress}
+                    setWalletIsConnected={setWalletIsConnected}
+                    setWalletData={setWalletData}
+                    walletData={walletData}
+                    setWalletAddress={setWalletAddress}
                   />
                 }
               />
-              <Route path="/team" element={<Team />} />
+              <Route path="/benefits" element={<Benefits />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
             </Routes>

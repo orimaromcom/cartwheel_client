@@ -16,7 +16,9 @@ const GetPartnerNft = () => {
 
   return (
     <>
-      <button onClick={write}>Become Partner</button>
+      <button className="bg-red-500" onClick={write}>
+        Join the club Become Partner
+      </button>
     </>
   );
 };
