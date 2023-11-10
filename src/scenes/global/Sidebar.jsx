@@ -113,8 +113,8 @@ const Sidebar = ({ walletData, walletIsConnected }) => {
                 setSelected={setSelected}
               />
               <Item
-                title="Club Usage"
-                to="/invoices"
+                title="Transactions"
+                to="/transactions"
                 icon={<ReceiptOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
